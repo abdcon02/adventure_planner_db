@@ -146,7 +146,10 @@
             foreach($result as $exploit){
                 $name = $exploit['name'];
                 $id = $exploit['id'];
-                $new_adventure = new Adventure($name, $id);
+                $description = $exploit['description'];
+                $feedback_id = $exploit['feedback_id'];
+                $cost = $exploit['cost'];
+                $new_adventure = new Adventure($name, $id, $description, $feedback_id, $cost);
                 array_push($matching_adventures, $new_adventure);
             }
             return $matching_adventures;

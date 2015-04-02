@@ -1,0 +1,76 @@
+#banner {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    height:200px;
+    width: 700px;
+}
+
+.container {
+    border: solid black 1px;
+    width: 1100px;
+
+}
+
+.header {
+    border:1px solid black;
+    text-align:center;
+    width: 900px;
+    margin:auto;
+
+}
+
+.main {
+    margin: auto;
+    width:900px;
+    border:1px solid black;
+}
+.adventure_box {
+    margin-left:100px;
+    width: 300px;
+    padding: 10px;
+    display:inline-block;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.adventure_image {
+    width:200px;
+    height: 200px;
+    border-radius:240px;
+}
+
+.adventure_activities {
+    text-align:center;
+}
+
+.adventure_activities_icons {
+    display:inline-block;
+    width:35px;
+    height: 35px;
+}
+
+.navbar span{
+    float:left;
+    width: 12em;
+    height: 4em;
+    padding-top: 15px;
+    border:1px solid black;
+    display:inline-block;
+    /*padding: 20px 10px 20px 10px;*/
+}
+
+.navbar .blank_nav {
+    border: none;
+    width: 20%;
+}
+
+.cost {
+    color: #005C1F;
+    font-size: 16pt;
+}
+
+.adventure_name {
+    font-weight: bold;
+    font-size: 16pt;
+}
