@@ -8,7 +8,6 @@
     require_once __DIR__."/../src/Customer.php";
 
 
-
     $app = new Silex\Application();
     $app['debug'] = true;
 
@@ -37,6 +36,16 @@
 
     $app->get("/santiago", function() use($app) {
         return $app['twig']->Render('santiago.html.twig');
+    });
+
+    $app->get("/signup", function() use($app){
+        //checkName()
+        return $app['twig']->render('signup.html.twig');
+    });
+
+    $app->get("/login", function() use($app){
+        //validate()
+        return $app['twig']->render('login.html.twig');
     });
 
     return $app;
