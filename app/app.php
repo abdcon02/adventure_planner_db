@@ -43,8 +43,28 @@
     $app->get("/adventure/{id}", function($id) use($app){
         $adventure = Adventure::find($id);
         return $app['twig']->render('adventure.html.twig', array('adventure' => $adventure));
+
     });
 
+    $app->get("/sanjuan", function() use($app) {
+        return $app['twig']->render('sanjuan.html.twig');
+    });
+
+    $app->get("/denali", function() use($app) {
+        return $app['twig']->render('denali.html.twig');
+    });
+
+    $app->get("/alps", function() use($app) {
+        return $app['twig']->render('Alps.html.twig');
+    });
+
+    $app->get("/australi", function() use($app) {
+        return $app['twig']->render('australi.html.twig');
+    });
+
+    $app->get("/thailand", function() use($app) {
+        return $app['twig']->render('thailand.html.twig');
+    });
     return $app;
 
  ?>
