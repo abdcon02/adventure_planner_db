@@ -124,6 +124,11 @@
             return $result['activity_pref'];
         }
 
+        function setActivityPreference($activity, $preference)
+        {
+            $GLOBALS['DB']->exec("INSERT INTO preferences (customer_id, activity_pref, activity_id, activity_name) VALUES ({$this->getId()}, {$preference}, {$activity->getId()}, '{$activity->getName()}');");
+        }
+
         function login($input_password)
         {
             $query = $GLOBALS['DB']->query("SELECT password FROM customers WHERE name = '{$this->getName()}';");

@@ -1,0 +1,111 @@
+SanJuan Islands Kayak Tour -
+Description:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
+
+Sail - 48.506000, -122.677990
+Sail - 48.595088, -122.940288
+Bike - 48.703962, -122.915569
+Kayak - 48.622328, -122.835918
+Kayak - 48.544200, -123.015819
+Sightsee - 48.596904, -123.100963
+Sightsee - 48.465950, -123.047405
+Kayak - 48.554200, -122.893596
+
+Levels:
+
+Sail : 3
+Bike : 3
+Kayak: 8
+Sightsee: 6
+
+
+////////////////
+Denali Climb and Camp -
+Description:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
+
+Eat - 61.207676, -149.782375
+Hike - 62.634608, -150.287747
+Camp - 63.145254, -149.914211
+Hike - 63.352947, -150.463528
+Camp - 63.578711, -149.804348
+Hike - 63.724990, -148.969387
+Sightsee - 62.966041, -149.892239
+
+Levels:
+
+Eat: 2
+Hike: 9
+Camp: 8
+Sightsee : 6
+
+
+////////////////
+Swiss French Alps Ski Trip-
+Description:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
+
+Sightsee - 47.355949, 8.564873
+Sightsee - 47.057405, 8.334160
+Hike - 46.006888, 7.812309
+Sightsee - 45.991624, 7.581596
+Ski - 46.086953, 7.169609
+
+Levels:
+
+Sightsee - 7
+Hike - 2
+Ski - 8
+
+
+////////////////
+Western Australi 200mi Road Race-
+Description:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
+
+Culture - -31.987384, 115.763542
+Run - -32.544768, 116.400749
+Run - -33.621747, 117.114860
+Run - -34.486448, 117.576286
+Culture - -35.072979, 117.785026
+
+Levels:
+
+Culture - 5
+Run - 10
+
+
+/////////////////
+Same old Thailand Trip
+Description:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
+
+Culture - 13.659385, 100.694728
+Swim - 9.484335, 99.288478
+Culture - 8.112281, 98.305344
+Sail - 6.935995, 99.008469
+Sightsee - 6.449520, 99.777512
+Eat - 6.296662, 99.799485
+
+Levels:
+
+Culture 7
+Swim - 4
+Sail - 5
+Sightsee - 5
+Eat - 5

@@ -353,22 +353,6 @@
             $this->assertEquals(9, $result);
         }
 
-        function test_savePreference()
-        {
-            //Arrange
-            $test_customer = new Customer("billy the kid");
-            $test_customer->save();
-            $test_activity = new Activity("Swim");
-            $test_activity->save();
-            $preference = 9;
-
-            //Act
-            $test_activity->saveActivityPreference($test_customer, $preference);
-            $result = $test_customer->getActivityPreference($test_activity);
-            //Assert
-            $this->assertEquals(9, $result);
-        }
-
 
 
 

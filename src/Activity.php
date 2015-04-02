@@ -35,7 +35,7 @@
 
     // General CRUD methods
 
-        // Save methods for saving activity, saving activity with level, and saving activity with customer
+        // Save methods for saving activity, saving activity with level
         function save()
         {
             $statement = $GLOBALS['DB']->query("INSERT INTO activities (name) VALUES ('{$this->getName()}') RETURNING id;");
@@ -46,11 +46,6 @@
         function saveActivityLevel($adventure, $level)
         {
             $GLOBALS['DB']->exec("INSERT INTO levels (activity_id, adventure_id, activity_lvl, activity_name) VALUES ({$this->getId()}, {$adventure->getId()}, {$level}, '{$this->getName()}');");
-        }
-
-        function saveActivityPreference($customer, $level)
-        {
-            $GLOBALS['DB']->exec("INSERT INTO preferences (activity_id, customer_id, activity_pref, activity_name) VALUES ({$this->getId()}, {$customer->getId()}, {$level}, '{$this->getName()}');");
         }
 
 
