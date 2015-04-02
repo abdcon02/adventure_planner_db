@@ -52,11 +52,11 @@
         return $app['twig']->render('Alps.html.twig');
     });
 
-    $app->get("australi", function() use($app) {
+    $app->get("/australi", function() use($app) {
         return $app['twig']->render('australi.html.twig');
     });
 
-    $app->get("thailand", function() use($app) {
+    $app->get("/thailand", function() use($app) {
         return $app['twig']->render('thailand.html.twig');
     });
     return $app;

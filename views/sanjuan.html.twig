@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +7,14 @@ src="http://maps.googleapis.com/maps/api/js">
 </script>
 
 <script>
-var place1 =new google.maps.LatLng(48.506000, -122.677990);
-var place2 =new google.maps.LatLng (48.595088, -122.940288);
-var place3 =new google.maps.LatLng (48.703962, -122.915569);
-var place4 =new google.maps.LatLng (48.622328, -122.835918);
-var place5 =new google.maps.LatLng(48.544200, -123.015819);
-var place6 =new google.maps.LatLng(48.596904, -123.100963);
-var place7 =new google.maps.LatLng(48.465950, -123.047405);
-var place8 =new google.maps.LatLng(48.554200, -122.893596);
+var place =new google.maps.LatLng(48.506000, -122.677990);
+var place1 =new google.maps.LatLng (48.595088, -122.940288);
+var place2 =new google.maps.LatLng (48.703962, -122.915569);
+var place3 =new google.maps.LatLng (48.622328, -122.835918);
+var place4 =new google.maps.LatLng(48.544200, -123.015819);
+var place5 =new google.maps.LatLng(48.596904, -123.100963);
+var place6 =new google.maps.LatLng(48.465950, -123.047405);
+var place7 =new google.maps.LatLng(48.554200, -122.893596);
 
 
 function initialize()
@@ -21,7 +22,7 @@ function initialize()
 
 
 var mapProp = {
-  center:place2,
+  center:place1,
   zoom:10,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
@@ -31,53 +32,54 @@ var sail = 'sail.png'
 var kayak = 'kayak.png'
 var sightsee = 'sightsee.png'
 
+var marker=new google.maps.Marker({
+  position:place,
+  icon: sail
+
+    });
 var marker1=new google.maps.Marker({
   position:place1,
   icon: sail
 
-});
+    });
 
 var marker2=new google.maps.Marker({
-  position:place2,
-  icon: sail
-
-  });
-
-var marker3=new google.maps.Marker({
-   position:place3,
+   position:place2,
    icon: sail
 
-   });
+    });
+var marker3=new google.maps.Marker({
+position:place3,
+    icon: kayak
+
+    });
 var marker4=new google.maps.Marker({
-    position:place4,
-    icon:kayak
+position:place4,
+    icon: kayak
 
     });
 var marker5=new google.maps.Marker({
-    position:place5,
-    icon:kayak
+position:place5,
+    icon:sightsee
 
     });
 var marker6=new google.maps.Marker({
-    position:place6,
+position:place6,
     icon:sightsee
 
     });
+
 var marker7=new google.maps.Marker({
-    position:place7,
-    icon:sightsee
-
-    });
-var marker8=new google.maps.Marker({
-    position:place8,
+position:place7,
     icon:kayak
-
     });
 
 
 
 
 
+
+marker.setMap(map);
 marker1.setMap(map);
 marker2.setMap(map);
 marker3.setMap(map);
@@ -85,27 +87,19 @@ marker4.setMap(map);
 marker5.setMap(map);
 marker6.setMap(map);
 marker7.setMap(map);
-marker8.setMap(map);
 
 
-var myTrip = [place1, place2, place3];
+
+
+
+
+var myTrip = [place,place1,place2,place3,place4,place5,place6,place7];
 var flightPath = new google.maps.Polyline({
   path:myTrip,
   strokeColor:"#0000FF",
   strokeOpacity:0.8,
   strokeWeight:2
 });
-
-
-
-var myTrip=[place1, place2, place3, place4, place5, place6, place7, place8];
-var flightPath=new google.maps.Polyline({
-  paths:myTrip,
-  strokeColor:"#DC143C",
-  strokeOpacity:0.8,
-  strokeWeight:2
-  });
-
 flightPath.setMap(map);
 }
 
