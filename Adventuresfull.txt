@@ -1,6 +1,9 @@
-Camino de Santiago
+Camino de Santiago-
+Description:
 
-The Camino de Santiago, also known by the English names Way of St. James, St. James's Way, St. James's Path, St. James's Trail, Route of Santiago de Compostela, and Road to Santiago, is the name of any of the pilgrimage routes (most commonly the Camino Francés or French route) to the shrine of the apostle St. James the Great in the Cathedral of Santiago de Compostela in Galicia in northwestern Spain, where tradition has it that the remains of the saint are buried. Many take up this route as a form of spiritual path or retreat, for their spiritual growth.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
 
 Saint-Jean-Pied-de-Port = 43.1650° N, 1.2356° W
 Roncesvalles = 43.0092° N, 1.3200° W
@@ -17,6 +20,8 @@ Levels :
 Hiking : 8
 Sightseeing : 6
 Culture : 7
+
+Cost: 3100
 
 SanJuan Islands Kayak Tour -
 Description:
@@ -41,6 +46,7 @@ Bike : 3
 Kayak: 8
 Sightsee: 6
 
+Cost: 400
 
 ////////////////
 Denali Climb and Camp -
@@ -65,6 +71,7 @@ Hike: 9
 Camp: 8
 Sightsee : 6
 
+Cost: 4500
 
 ////////////////
 Swiss French Alps Ski Trip-
@@ -86,6 +93,7 @@ Sightsee - 7
 Hike - 2
 Ski - 8
 
+Cost: 5430
 
 ////////////////
 Western Australi 200mi Road Race-
@@ -106,6 +114,7 @@ Levels:
 Culture - 5
 Run - 10
 
+Cost: 1
 
 /////////////////
 Same old Thailand Trip
@@ -129,3 +138,5 @@ Swim - 4
 Sail - 5
 Sightsee - 5
 Eat - 5
+
+Cost: 2040

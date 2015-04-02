@@ -6,13 +6,15 @@
         private $id;
         private $description;
         private $feedback_id;
+        private $cost;
 
-        function __construct($name, $id = null, $description = "", $feedback_id = 1)
+        function __construct($name, $id = null, $description = "", $feedback_id = 1, $cost = 1)
         {
             $this->name = $name;
             $this->id = $id;
             $this->description = $description;
             $this->feedback_id = $feedback_id;
+            $this->cost = $cost;
         }
 
         function getName()
@@ -55,9 +57,19 @@
             $this->feedback_id = (int) $new_id;
         }
 
+        function getCost()
+        {
+            return $this->cost;
+        }
+
+        function setCost($new_cost)
+        {
+            $this->cost = (int) $new_cost;
+        }
+
         function save()
         {
-            $query = $GLOBALS['DB']->query("INSERT INTO adventures (name, description, feedback_id) VALUES ('{$this->getName()}', '{$this->getDescription()}', {$this->getFeedback_id()}) RETURNING id;");
+            $query = $GLOBALS['DB']->query("INSERT INTO adventures (name, description, feedback_id, cost) VALUES ('{$this->getName()}', '{$this->getDescription()}', {$this->getFeedback_id()}, {$this->getCost()}) RETURNING id;");
             $query_fetched = $query->fetch(PDO::FETCH_ASSOC);
             $this->setId($query_fetched['id']);
 
@@ -143,7 +155,9 @@
                 $name = $element['name'];
                 $id = $element['id'];
                 $description = $element['description'];
-                $new_adventure = new Adventure($name, $id, $description);
+                $feedback_id = $element['feedback_id'];
+                $cost = $element['cost'];
+                $new_adventure = new Adventure($name, $id, $description, $feedback_id, $cost);
                 array_push($return_adventures, $new_adventure);
             }
             return $return_adventures;
@@ -166,7 +180,9 @@
                 $new_name = $element['name'];
                 $new_id = $element['id'];
                 $description = $element['description'];
-                $found_adventure = new Adventure($new_name, $new_id, $description);
+                $feedback_id = $element['feedback_id'];
+                $cost = $element['cost'];
+                $found_adventure = new Adventure($new_name, $new_id, $description, $feedback_id, $cost);
             }
             return $found_adventure;
 

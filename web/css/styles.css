@@ -1,0 +1,25 @@
+#banner {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    height:200px;
+    width: 600px;
+}
+
+.header {
+    border:1px solid black;
+}
+
+.main {
+    margin: auto;
+    width:700px;
+    border:1px solid black;
+}
+.adventure_box {
+
+    align: center;
+    width: 300px;
+    padding: 10px;
+    display:inline-block;
+    border: 1px solid black;
+}

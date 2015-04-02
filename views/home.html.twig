@@ -2,9 +2,30 @@
 <html>
     <head>
         <title>Princess Adventures</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
     </head>
     <body>
         <div class="container">
+            <div class="header">
+                <img id="banner" src="../images/banner.jpg" alt="banner"/>
+                <div class="navbar">
+
+                </div>
+            </div>
+
+            <div class="main">
+
+                {% for action in adventures %}
+                    <a href=""<div class="adventure_box">
+                        {{ action.getName() }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="footer">
+
+            </div>
             <a href="/santiago">Santiago</a>
         </div>
     </body>
