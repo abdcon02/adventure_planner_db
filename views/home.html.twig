@@ -11,7 +11,11 @@
                 <img id="banner" src="../images/banner.jpg" alt="banner"/>
                 <h1>Princess Adventures</h1>
                 <div class="navbar">
-
+                    <span>Search by Country</span>
+                    <span>Search by Activity</span>
+                    <span>Search by Adventure</span>
+                    <span class="blank_nav"></span>
+                    <span>Login</span>
                 </div>
             </div>
 
@@ -22,8 +26,8 @@
                         <a href="/adventure/{{ action.getId }}">
                         <img class="adventure_image" src="../images/{{ action.getId }}.jpg" alt="adventure image" />
                         </a>
-                        <p>{{ action.getName }}</p>
-                        <p> Cost:$ {{ action.getCost }}</p>
+                        <p><span class="adventure_name">{{ action.getName }}</span></p>
+                        <p> Cost: <span class="cost">${{ action.getCost }}</span></p>
                         <div class="adventure_activities">
                             {% for event in action.getActivities %}
                                 <img class="adventure_activities_icons" src="../images/{{ event.getName }}.png" alt="Icon" />
