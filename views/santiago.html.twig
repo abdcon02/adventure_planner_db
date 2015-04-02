@@ -6,18 +6,21 @@ src="http://maps.googleapis.com/maps/api/js">
 </script>
 
 <script>
-var Saint_Jean_Pied_de_Port=new google.maps.LatLng(3.1650°, -1.2356°);
+var Saint_Jean_Pied_de_Port=new google.maps.LatLng(43.1667, -1.2356);
 var Roncesvalles =new google.maps.LatLng (43.0092, -1.3200);
-var Pamploma =new google.maps.LatLng (42.8167,1.6500);
-var Santo_Domingo_de_la_Calzada =new google.maps.LatLng (42.4330, 2.9500);
-var Castrojeriz = new google.maps.LatLng(42.2878, 4.1389);
-var Villadangos_del_Páramo = new google.maps.LatLng(42.5167,5.7667);
-var Ponferrada = new google.maps.LatLng(42.5500, 6.5833);
-var Portomarín = new google.maps.LatLng(42.8072,7.6158);
-var Santiago_de_Compostela = new google.maps.LatLng(42.8778,8.5444);
+var Pamploma =new google.maps.LatLng (42.8167,-1.6500);
+var Santo_Domingo_de_la_Calzada =new google.maps.LatLng (42.4330, -2.9500);
+var Burgos = new google.maps.LatLng(42.3500, -3.7067);
+var Leon= new google.maps.LatLng(42.6056, -5.5700);
+var Ponferrada = new google.maps.LatLng(42.5500, -6.5833);
+var Portomarín = new google.maps.LatLng(42.8072, -7.6158);
+var Santiago_de_Compostela = new google.maps.LatLng(42.8778, -8.5444);
+
 
 function initialize()
 {
+
+
 var mapProp = {
   center:Saint_Jean_Pied_de_Port,
   zoom:6,
@@ -25,67 +28,73 @@ var mapProp = {
   };
 
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var image = 'rsz_1rsz_hike.png'
 var marker=new google.maps.Marker({
-  position:Saint-Jean-Pied-de-Port,
+  position:Saint_Jean_Pied_de_Port,
+  icon: image
 
 });
 
 var marker1=new google.maps.Marker({
   position:Roncesvalles,
+  icon: image
 
   });
 
 var marker2=new google.maps.Marker({
    position:Pamploma,
+   icon: image
 
    });
 var marker3=new google.maps.Marker({
 position:Santo_Domingo_de_la_Calzada,
+    icon:image
 
     });
 var marker4=new google.maps.Marker({
-position:Castrojeriz,
+position:Burgos,
+    icon:image
 
     });
 var marker5=new google.maps.Marker({
-position:Villadangos_del_Páramo,
+position:Leon,
+    icon:image
 
     });
 var marker6=new google.maps.Marker({
 position:Ponferrada,
+    icon:image
 
     });
 var marker7=new google.maps.Marker({
 position:Portomarín,
+    icon:image
 
     });
 var marker8=new google.maps.Marker({
 position:Santiago_de_Compostela,
+    icon:image
 
     });
 
 
 
+
 marker.setMap(map);
-
 marker1.setMap(map);
-
 marker2.setMap(map);
 marker3.setMap(map);
-
 marker4.setMap(map);
 marker5.setMap(map);
-
 marker6.setMap(map);
 marker7.setMap(map);
-
 marker8.setMap(map);
-marker9.setMap(map);
 
 
 
 
-var myTrip=[Saint_Jean_Pied_de_port, Roncesvalles, Pamploma, Santo_Domingo_de_la_Calzada, Castrojeriz, Villadangos_del_Páramo, Ponferrada, Portomarín, Santiago_de_Compostela];
+
+var myTrip=[Saint_Jean_Pied_de_Port, Roncesvalles, Pamploma, Santo_Domingo_de_la_Calzada, Burgos, Leon, Ponferrada, Portomarín, Santiago_de_Compostela];
 var flightPath=new google.maps.Polyline({
   path:myTrip,
   strokeColor:"#0000FF",
