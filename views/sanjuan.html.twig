@@ -31,6 +31,7 @@ var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 var sail = 'sail.png'
 var kayak = 'kayak.png'
 var sightsee = 'sightsee.png'
+var bike = 'bike.png'
 
 var marker=new google.maps.Marker({
   position:place,
@@ -45,7 +46,7 @@ var marker1=new google.maps.Marker({
 
 var marker2=new google.maps.Marker({
    position:place2,
-   icon: sail
+   icon: bike
 
     });
 var marker3=new google.maps.Marker({
@@ -88,7 +89,15 @@ marker5.setMap(map);
 marker6.setMap(map);
 marker7.setMap(map);
 
+var infowindow = new google.maps.InfoWindow({
+  content:"Tour San Juan with Kayaks."
+  });
 
+
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
 
 
 

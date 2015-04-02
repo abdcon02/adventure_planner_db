@@ -83,7 +83,15 @@ marker5.setMap(map);
 marker6.setMap(map);
 
 
+var infowindow = new google.maps.InfoWindow({
+  content:"This is in Alaska. Where it's cold."
+  });
 
+
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
 
 
 
