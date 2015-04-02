@@ -4,6 +4,10 @@
         <title>Princess Adventures</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
+
+        <script
+        src="http://maps.googleapis.com/maps/api/js">
+        </script>
     </head>
     <body>
         <div class="container">
@@ -30,6 +34,14 @@
                     <img class="adventure_activities_icons" src="../images/{{ event.getName }}.png" alt="Icon" />
                     <p> {{ adventure.getActivityLevel(event) }}</p>
                 {% endfor %}
+
+            </div>
+            <div class="map">
+                {% include(map) %}
+
+
+
+
             </div>
             <div class="footer">
 

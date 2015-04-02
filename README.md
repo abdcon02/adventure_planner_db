@@ -2,10 +2,12 @@
 James Nielsen, Jonathan Lin, Connor Abdelnoor
 
 ##Date
-March 18 2015
+April 2 2015
 
 ##Description
-
+This app was created for the purpose of selling adventures to customers. A company can create an adventure, and display it through the app. Details of the adventure include: activities, activity coordinates, activity level, and cost.
+<br />*At the moment activity coordinates need to be hard coded into the map scripts.*<br />
+A user can access the app and view the created adventures. They can create and log into their accounts.
 
 ##Use and Editing
 To use the app, download the source code and run it in on your php server.

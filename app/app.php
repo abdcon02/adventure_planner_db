@@ -42,8 +42,10 @@
 
     $app->get("/adventure/{id}", function($id) use($app){
         $adventure = Adventure::find($id);
-        return $app['twig']->render('adventure.html.twig', array('adventure' => $adventure));
 
+        $map = $id . '.html.twig';
+
+        return $app['twig']->render('adventure.html.twig', array('adventure' => $adventure, 'map' => $map));
     });
 
     $app->get("/sanjuan", function() use($app) {

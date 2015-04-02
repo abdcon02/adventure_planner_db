@@ -1,0 +1,114 @@
+<script>
+var Saint_Jean_Pied_de_Port=new google.maps.LatLng(43.1667, -1.2356);
+var Roncesvalles =new google.maps.LatLng (43.0092, -1.3200);
+var Pamploma =new google.maps.LatLng (42.8167,-1.6500);
+var Santo_Domingo_de_la_Calzada =new google.maps.LatLng (42.4330, -2.9500);
+var Burgos = new google.maps.LatLng(42.3500, -3.7067);
+var Leon= new google.maps.LatLng(42.6056, - 5.5700);
+var Ponferrada = new google.maps.LatLng(42.5500, -6.5833);
+var Portomarín = new google.maps.LatLng(42.8072, -7.6158);
+var Santiago_de_Compostela = new google.maps.LatLng(42.8778, -8.5444);
+
+
+function initialize()
+{
+
+
+var mapProp = {
+  center:Saint_Jean_Pied_de_Port,
+  zoom:7,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var hike = '/hike.png'
+var culture = '/culture.png'
+
+var marker=new google.maps.Marker({
+  position:Saint_Jean_Pied_de_Port,
+  icon: hike
+
+});
+
+var marker1=new google.maps.Marker({
+  position:Roncesvalles,
+  icon: hike
+
+  });
+
+var marker2=new google.maps.Marker({
+   position:Pamploma,
+   icon: hike
+
+   });
+var marker3=new google.maps.Marker({
+position:Santo_Domingo_de_la_Calzada,
+    icon:hike
+
+    });
+var marker4=new google.maps.Marker({
+position:Burgos,
+    icon:hike
+
+    });
+var marker5=new google.maps.Marker({
+position:Leon,
+    icon:culture
+
+    });
+var marker6=new google.maps.Marker({
+position:Ponferrada,
+    icon:hike
+
+    });
+var marker7=new google.maps.Marker({
+position:Portomarín,
+    icon:hike
+
+    });
+var marker8=new google.maps.Marker({
+position:Santiago_de_Compostela,
+    icon:culture
+
+    });
+
+var infowindow = new google.maps.InfoWindow({
+  content:"The Camino de Santiago is the name of any of the pilgrimage routes (most commonly the Camino Francés or French route) to the shrine of the apostle St. James the Great in the Cathedral of Santiago de Compostela in Galicia in northwestern Spain, where tradition has it that the remains of the saint are buried. Many take up this route as a form of spiritual path or retreat, for their spiritual growth. One of the trails starts here, at the Saint Jean Pied de Port."
+  });
+
+
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+
+
+marker.setMap(map);
+marker1.setMap(map);
+marker2.setMap(map);
+marker3.setMap(map);
+marker4.setMap(map);
+marker5.setMap(map);
+marker6.setMap(map);
+marker7.setMap(map);
+marker8.setMap(map);
+
+
+
+
+
+var myTrip=[Saint_Jean_Pied_de_Port, Roncesvalles, Pamploma, Santo_Domingo_de_la_Calzada, Burgos, Leon, Ponferrada, Portomarín, Santiago_de_Compostela];
+var flightPath=new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#DC143C",
+  strokeOpacity:0.8,
+  strokeWeight:2
+  });
+
+flightPath.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="googleMap" style="width:500px;height:380px;"></div>

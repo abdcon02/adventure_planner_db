@@ -1,0 +1,99 @@
+<script>
+var Cottesloe =new google.maps.LatLng(13.659385, 100.694728);
+var Bannister =new google.maps.LatLng (9.484335, 99.288478);
+var Beaufort  =new google.maps.LatLng (8.112281, 98.305344);
+var Kendenup =new google.maps.LatLng (6.935995, 99.008469);
+var Sandpatch =new google.maps.LatLng(6.449520, 99.777512);
+var hello = new google.maps.LatLng(6.296662, 99.799485)
+
+
+
+function initialize()
+{
+
+
+
+var mapProp = {
+  center:Bannister,
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var sightsee = '/sightsee.png'
+var hike = '/hike.png'
+var ski = '/eat.png'
+var run = '/run.png'
+var culture = '/culture.png'
+var swim = '/swim.png'
+var sail = '/sail.png'
+
+var marker=new google.maps.Marker({
+  position:Cottesloe,
+  icon: culture
+
+    });
+
+var marker1=new google.maps.Marker({
+  position:Bannister,
+  icon: swim
+
+    });
+
+var marker2=new google.maps.Marker({
+   position:Beaufort,
+   icon: ski
+
+    });
+
+var marker3=new google.maps.Marker({
+    position:Kendenup,
+    icon: sail
+
+    });
+var marker4=new google.maps.Marker({
+    position:Sandpatch,
+    icon: sightsee
+
+    });
+
+var marker5=new google.maps.Marker({
+    position:hello,
+    icon: swim
+
+});
+
+marker.setMap(map);
+marker1.setMap(map);
+marker2.setMap(map);
+marker3.setMap(map);
+marker4.setMap(map);
+marker5.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+    content: "Thailand is fun."
+  });
+
+
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+
+
+
+var myTrip=[Cottesloe, Bannister, Beaufort , Kendenup, Sandpatch, hello];
+var flightPath=new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#DC143C",
+  strokeOpacity:0.8,
+  strokeWeight:2
+  });
+
+flightPath.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="googleMap" style="width:500px;height:380px;"></div>
