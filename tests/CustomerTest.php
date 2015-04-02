@@ -140,7 +140,22 @@
             $test_customer2 = new Customer($name2);
             $test_customer2->save();
             //Act
-            $result = Customer::checkName($name);
+            $result = Customer::checkName("zack");
+
+            //Assert
+            $this->assertEquals(false, $result);
+        }
+
+        function test_login()
+        {
+            //Arrange
+            $name = "Hollly";
+            $password = "admin";
+            $test_customer = new Customer($name, $password);
+            $test_customer->save();
+
+            //Act
+            $result = $test_customer->login($password);
 
             //Assert
             $this->assertEquals(true, $result);

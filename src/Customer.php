@@ -43,6 +43,23 @@
             $this->password = (string) $new_password;
         }
 // Methods to interact with Database
+
+// This function needs to be run before the save method!!!
+// Only save if return == false!!!
+        static function checkName($name)
+        {
+            $query = $GLOBALS['DB']->query("SELECT name FROM customers;");
+            $all_names = $query->fetchAll(PDO::FETCH_ASSOC);
+            $exist = false;
+
+            foreach($all_names as $username){
+                if($username['name'] == $name){
+                    $exist = true;
+                }
+            }
+            return $exist;
+        }
+
         function save()
         {
             $statement = $GLOBALS['DB']->query("INSERT INTO customers (name, password) VALUES ('{$this->getName()}', '{$this->getPassword()}') RETURNING id;");
@@ -107,18 +124,18 @@
             return $result['activity_pref'];
         }
 
-        static function checkName($name)
+        function login($input_password)
         {
-            $query = $GLOBALS['DB']->query("SELECT name FROM customers;");
-            $all_names = $query->fetchAll(PDO::FETCH_ASSOC);
-            $exist = false;
+            $query = $GLOBALS['DB']->query("SELECT password FROM customers WHERE name = '{$this->getName()}';");
 
-            foreach($all_names as $username){
-                if($username['name'] == $name){
-                    $exist = true;
-                }
+            $password = $query->fetch(PDO::FETCH_ASSOC);
+            $match = false;
+
+            if($password['password'] == $input_password){
+                $match = true;
             }
-            return $exist;
+
+            return $match;
         }
 
     }
