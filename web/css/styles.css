@@ -8,6 +8,7 @@
 
 .header {
     border:1px solid black;
+    text-align:center;
 }
 
 .main {
@@ -25,4 +26,14 @@
     width:200px;
     height: 200px;
     border-radius:240px;
+}
+
+.adventure_activities {
+    text-align:center;
+}
+
+.adventure_activities_icons {
+    display:inline-block;
+    width:35px;
+    height: 35px;
 }
