@@ -2,9 +2,33 @@
 <html>
     <head>
         <title>Princess Adventures</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
+            <div class='row'>
+                <div class='.col-sm-8' name='x' id='x'>I'm a div</div>
+                <div class='.col-sm-4' name='login' id='login'>
+                    <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+                        <!-- <fieldset >
+                        <legend>Login</legend> -->
+                        <input type='hidden' name='submitted' id='submitted' value='1'/>
+
+                        <!-- <label for='username' >UserName:</label> -->
+                        <input type='text' name='username' id='username'  maxlength="30" value="USERNAME" />
+                        <br>
+                        <!-- <label for='password' >Password:</label> -->
+                        <input type='password' name='password' id='password' maxlength="50" value="PASSWORD"  />
+
+                        <input type='submit' name='Submit' value='Submit' />
+                        <!-- </fieldset> -->
+                    </form>
+                </div>
+            </div>
+
+
+
+
 
         </div>
     </body>
