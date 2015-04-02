@@ -18,14 +18,21 @@
                             <li>
                                 {{ action.getName }}
                                 <ol>
-                                    <form action="/location_level" method="post">
+                                    <form action="/location" method="post">
                                         <input type="hidden" name="adventure_id" value=" {{ adventure.getId }}">
                                         <input type="hidden" name="activity_id" value=" {{ action.getId }}">
                                         <label for="longitude">Enter Activity longitude</label>
                                         <input type="number" step="any" name="longitude" required>
                                         <label for="latitude">Enter Activity latitude</label>
                                         <input type="number" step="any" name="latitude" required>
-                                        <br>
+                                        <Br>
+                                        <button type="submit" class="btn">Add Coordinates</button>
+
+                                    </form>
+                                    <br>
+                                    <form action="/level" method="post">
+                                        <input type="hidden" name="adventure_id" value=" {{ adventure.getId }}">
+                                        <input type="hidden" name="activity_id" value=" {{ action.getId }}">
                                         <label for="level">Input Activity Level</label>
                                         <select name="level" type="number" required>
                                             <option value="0">0</option>
@@ -40,9 +47,8 @@
                                             <option value="9">9</option>
                                             <option value="10">10</option>
                                         </select>
-                                        <Br>
-                                        <button type="submit" class="btn">Add Attributes</button>
-
+                                        <br>
+                                        <button type="submit" class="btn">Add Level</button>
                                     </form>
                                 </ol>
                             </li>
