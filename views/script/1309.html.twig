@@ -1,10 +1,9 @@
 <script>
-var Cottesloe =new google.maps.LatLng(13.659385, 100.694728);
-var Bannister =new google.maps.LatLng (9.484335, 99.288478);
-var Beaufort  =new google.maps.LatLng (8.112281, 98.305344);
-var Kendenup =new google.maps.LatLng (6.935995, 99.008469);
-var Sandpatch =new google.maps.LatLng(6.449520, 99.777512);
-var hello = new google.maps.LatLng(6.296662, 99.799485)
+var Cottesloe =new google.maps.LatLng(-31.987384, 115.763542);
+var Bannister =new google.maps.LatLng (-32.544768, 116.400749);
+var Beaufort  =new google.maps.LatLng (-33.621747, 117.114860);
+var Kendenup =new google.maps.LatLng (-34.486448, 117.576286);
+var Sandpatch =new google.maps.LatLng(-35.072979, 117.785026);
 
 
 
@@ -15,7 +14,7 @@ function initialize()
 
 var mapProp = {
   center:Bannister,
-  zoom:5,
+  zoom:7,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
 
@@ -25,8 +24,6 @@ var hike = '/hike.png'
 var ski = '/eat.png'
 var run = '/run.png'
 var culture = '/culture.png'
-var swim = '/swim.png'
-var sail = '/sail.png'
 
 var marker=new google.maps.Marker({
   position:Cottesloe,
@@ -36,42 +33,40 @@ var marker=new google.maps.Marker({
 
 var marker1=new google.maps.Marker({
   position:Bannister,
-  icon: swim
+  icon: run
 
     });
 
 var marker2=new google.maps.Marker({
    position:Beaufort,
-   icon: ski
+   icon: run
 
     });
 
 var marker3=new google.maps.Marker({
     position:Kendenup,
-    icon: sail
+    icon: run
 
     });
 var marker4=new google.maps.Marker({
     position:Sandpatch,
-    icon: sightsee
+    icon:culture
 
     });
 
-var marker5=new google.maps.Marker({
-    position:hello,
-    icon: swim
 
-});
+
+
+
 
 marker.setMap(map);
 marker1.setMap(map);
 marker2.setMap(map);
 marker3.setMap(map);
 marker4.setMap(map);
-marker5.setMap(map);
 
 var infowindow = new google.maps.InfoWindow({
-    content: "Thailand is fun."
+  content:"200 Mile Foot Race"
   });
 
 
@@ -82,7 +77,8 @@ google.maps.event.addListener(marker, 'click', function() {
 
 
 
-var myTrip=[Cottesloe, Bannister, Beaufort , Kendenup, Sandpatch, hello];
+
+var myTrip=[Cottesloe, Bannister, Beaufort , Kendenup, Sandpatch];
 var flightPath=new google.maps.Polyline({
   path:myTrip,
   strokeColor:"#DC143C",
@@ -95,5 +91,3 @@ flightPath.setMap(map);
 
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
-<div id="googleMap" style="width:500px;height:380px;"></div>
