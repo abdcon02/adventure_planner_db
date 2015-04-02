@@ -37,7 +37,12 @@
     });
 
     $app->get("/santiago", function() use($app) {
-        return $app['twig']->Render('santiago.html.twig');
+        return $app['twig']->render('santiago.html.twig');
+    });
+
+    $app->get("/adventure/{id}", function($id) use($app){
+        $adventure = Adventure::find($id);
+        return $app['twig']->render('adventure.html.twig', array('adventure' => $adventure));
     });
 
     return $app;
