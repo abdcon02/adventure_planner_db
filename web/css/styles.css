@@ -16,10 +16,13 @@
     border:1px solid black;
 }
 .adventure_box {
-
-    align: center;
-    width: 300px;
     padding: 10px;
     display:inline-block;
     border: 1px solid black;
+}
+
+.adventure_image {
+    width:200px;
+    height: 200px;
+    border-radius:240px;
 }

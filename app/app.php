@@ -28,6 +28,7 @@
 // Routes for User
 
     $app->get("/", function() use($app){
+
         return $app['twig']->render('home.html.twig', array('adventures' => Adventure::getAll()));
     });
 

@@ -140,7 +140,8 @@ CREATE TABLE adventures (
     id integer NOT NULL,
     name character varying,
     description character varying,
-    feedback_id integer
+    feedback_id integer,
+    cost integer
 );
 
 
@@ -504,6 +505,8 @@ COPY activities (id, name, feedback_id) FROM stdin;
 1761	Hike	\N
 1762	Camp	\N
 1763	Ski	\N
+1764	Bike	\N
+1765	Eat	\N
 \.
 
 
@@ -1044,6 +1047,24 @@ COPY activities_adventures (id, activity_id, adventure_id, required) FROM stdin;
 635	1761	1305	\N
 636	1758	1305	\N
 637	1755	1305	\N
+638	1759	1306	\N
+639	1764	1306	\N
+640	1760	1306	\N
+641	1758	1306	\N
+642	1765	1307	\N
+643	1761	1307	\N
+644	1762	1307	\N
+645	1758	1307	\N
+646	1758	1308	\N
+647	1761	1308	\N
+648	1763	1308	\N
+649	1755	1309	\N
+650	1757	1309	\N
+651	1755	1310	\N
+652	1756	1310	\N
+653	1759	1310	\N
+654	1758	1310	\N
+655	1765	1310	\N
 \.
 
 
@@ -1051,7 +1072,7 @@ COPY activities_adventures (id, activity_id, adventure_id, required) FROM stdin;
 -- Name: activities_adventures_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('activities_adventures_id_seq', 637, true);
+SELECT pg_catalog.setval('activities_adventures_id_seq', 655, true);
 
 
 --
@@ -1421,20 +1442,20 @@ SELECT pg_catalog.setval('activities_countries_id_seq', 407, true);
 -- Name: activities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('activities_id_seq', 1763, true);
+SELECT pg_catalog.setval('activities_id_seq', 1765, true);
 
 
 --
 -- Data for Name: adventures; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
-COPY adventures (id, name, description, feedback_id) FROM stdin;
-1305	Camino de Santiago	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1
-1306	SanJuan Islands Kayak Tour	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1
-1307	Denali Climb and Camp	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1
-1308	Swiss French Alps Ski Trip	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1
-1309	Western Australia 200mi Road Race	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1
-1310	Same old Thailand Trip	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1
+COPY adventures (id, name, description, feedback_id, cost) FROM stdin;
+1306	SanJuan Islands Kayak Tour	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1	400
+1307	Denali Climb and Camp	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1	4500
+1308	Swiss French Alps Ski Trip	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1	5430
+1309	Western Australia 200mi Road Race	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1	1
+1310	Same old Thailand Trip	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1	2040
+1305	Camino de Santiago	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	1	3100
 \.
 
 
@@ -1693,6 +1714,24 @@ COPY levels (id, adventure_id, activity_lvl, activity_id, activity_name) FROM st
 1	1305	8	1761	Hike
 2	1305	6	1758	Sightsee
 3	1305	7	1755	Culture
+4	1306	3	1759	Sail
+5	1306	3	1764	Bike
+6	1306	8	1760	Kayak
+7	1306	6	1758	Sightsee
+8	1307	2	1765	Eat
+9	1307	9	1761	Hike
+10	1307	8	1762	Camp
+11	1307	6	1758	Sightsee
+12	1308	7	1758	Sightsee
+13	1308	2	1761	Hike
+14	1308	8	1763	Ski
+15	1309	5	1755	Culture
+16	1309	10	1757	Run
+17	1310	7	1755	Culture
+18	1310	4	1756	Swim
+19	1310	5	1759	Sail
+20	1310	5	1758	Sightsee
+21	1310	5	1765	Eat
 \.
 
 
@@ -1700,7 +1739,7 @@ COPY levels (id, adventure_id, activity_lvl, activity_id, activity_name) FROM st
 -- Name: levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('levels_id_seq', 3, true);
+SELECT pg_catalog.setval('levels_id_seq', 21, true);
 
 
 --
