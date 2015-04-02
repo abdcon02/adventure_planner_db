@@ -35,6 +35,9 @@
         return $app['twig']->render('profile.html.twig');
     });
 
+    $app->get("/santiago", function() use($app) {
+        return $app['twig']->Render('santiago.html.twig');
+    });
 
     return $app;
 
