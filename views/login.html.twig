@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Princess Travel</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col-sm-2' name='x' id='x'>
+                </div>
+                <div class='col-sm-8' name='x' id='x'>
+                    <img src="welcome.jpg" alt="Welcome!" style="width:480px;height:261px">
+                </div>
+                <div class='col-sm-2' name='x' id='x'>
+                </div>
+        </div>
+        <div class='row'>
+            <br>
+        </div>
+            <div class='row'><br>
+                <div class='col-sm-6' name='' id=''>
+                    <form id='signup' action='signup.php' method='post' accept-charset='UTF-8'>
+                        <fieldset >
+                        <legend>NEW User Sign-up</legend>
+                        <input type='hidden' name='submitted' id='submitted' value='1'/>
+
+                        <label for='username' >UserName:</label>
+                        <input type='text' name='username' id='username'  maxlength="30" value="NewUser" />
+                        <br>
+                        <label for='password' >Password:</label>
+                        <input type='password' name='password' id='password' maxlength="50" value="CREATE A PASSWORD"/>
+
+                        <input type='submit' name='Submit' value='Sign Up' />
+
+                        <br>(UserNames are case sensitive.)
+                        </fieldset>
+                    </form>
+                </div>
+                <div class='col-sm-6' name='login' id='login'>
+                    <form action='login.php' id='login' method='post' accept-charset='UTF-8'>
+                        <fieldset >
+                        <legend>Member Login</legend>
+                        <input type='hidden' name='submitted' id='submitted' value='1'/>
+
+                        <!-- <label for='username' >UserName:</label> -->
+                        <input type='text' name='username' id='username'  maxlength="30" value="USERNAME" />
+                        <br>
+                        <!-- <label for='password' >Password:</label> -->
+                        <input type='password' name='password' id='password' maxlength="50" value="PASSWORD"/>
+
+                        <input type='submit' name='Submit' value='Log In' />
+                        <!-- </fieldset> -->
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </body>
+</html>
