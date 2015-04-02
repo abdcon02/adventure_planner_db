@@ -36,9 +36,28 @@
     });
 
     $app->get("/santiago", function() use($app) {
-        return $app['twig']->Render('santiago.html.twig');
+        return $app['twig']->render('santiago.html.twig');
     });
 
+    $app->get("/sanjuan", function() use($app) {
+        return $app['twig']->render('sanjuan.html.twig');
+    });
+
+    $app->get("/denali", function() use($app) {
+        return $app['twig']->render('denali.html.twig');
+    });
+
+    $app->get("/alps", function() use($app) {
+        return $app['twig']->render('Alps.html.twig');
+    });
+
+    $app->get("australi", function() use($app) {
+        return $app['twig']->render('australi.html.twig');
+    });
+
+    $app->get("thailand", function() use($app) {
+        return $app['twig']->render('thailand.html.twig');
+    });
     return $app;
 
  ?>

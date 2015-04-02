@@ -11,7 +11,7 @@ var Roncesvalles =new google.maps.LatLng (43.0092, -1.3200);
 var Pamploma =new google.maps.LatLng (42.8167,-1.6500);
 var Santo_Domingo_de_la_Calzada =new google.maps.LatLng (42.4330, -2.9500);
 var Burgos = new google.maps.LatLng(42.3500, -3.7067);
-var Leon= new google.maps.LatLng(42.6056, -5.5700);
+var Leon= new google.maps.LatLng(42.6056, - 5.5700);
 var Ponferrada = new google.maps.LatLng(42.5500, -6.5833);
 var Portomarín = new google.maps.LatLng(42.8072, -7.6158);
 var Santiago_de_Compostela = new google.maps.LatLng(42.8778, -8.5444);
@@ -28,52 +28,54 @@ var mapProp = {
   };
 
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var image = 'rsz_1rsz_hike.png'
+var hike = 'hike.png'
+var culture = 'culture.png'
+
 var marker=new google.maps.Marker({
   position:Saint_Jean_Pied_de_Port,
-  icon: image
+  icon: hike
 
 });
 
 var marker1=new google.maps.Marker({
   position:Roncesvalles,
-  icon: image
+  icon: hike
 
   });
 
 var marker2=new google.maps.Marker({
    position:Pamploma,
-   icon: image
+   icon: hike
 
    });
 var marker3=new google.maps.Marker({
 position:Santo_Domingo_de_la_Calzada,
-    icon:image
+    icon:hike
 
     });
 var marker4=new google.maps.Marker({
 position:Burgos,
-    icon:image
+    icon:hike
 
     });
 var marker5=new google.maps.Marker({
 position:Leon,
-    icon:image
+    icon:culture
 
     });
 var marker6=new google.maps.Marker({
 position:Ponferrada,
-    icon:image
+    icon:hike
 
     });
 var marker7=new google.maps.Marker({
 position:Portomarín,
-    icon:image
+    icon:hike
 
     });
 var marker8=new google.maps.Marker({
 position:Santiago_de_Compostela,
-    icon:image
+    icon:culture
 
     });
 
@@ -97,7 +99,7 @@ marker8.setMap(map);
 var myTrip=[Saint_Jean_Pied_de_Port, Roncesvalles, Pamploma, Santo_Domingo_de_la_Calzada, Burgos, Leon, Ponferrada, Portomarín, Santiago_de_Compostela];
 var flightPath=new google.maps.Polyline({
   path:myTrip,
-  strokeColor:"#0000FF",
+  strokeColor:"#DC143C",
   strokeOpacity:0.8,
   strokeWeight:2
   });
