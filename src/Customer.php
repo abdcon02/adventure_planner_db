@@ -107,5 +107,19 @@
             return $result['activity_pref'];
         }
 
+        static function checkName($name)
+        {
+            $query = $GLOBALS['DB']->query("SELECT name FROM customers;");
+            $all_names = $query->fetchAll(PDO::FETCH_ASSOC);
+            $exist = false;
+
+            foreach($all_names as $username){
+                if($username['name'] == $name){
+                    $exist = true;
+                }
+            }
+            return $exist;
+        }
+
     }
  ?>

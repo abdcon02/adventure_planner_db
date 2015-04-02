@@ -12,16 +12,16 @@
         {
             Customer::deleteAll();
         }
-        
+
         function test_SetName()
         {
             //Arrange
             $name = "Dandy";
-            $test_patron = new Customer($name);
+            $test_customer = new Customer($name);
             $new_name = "Terry";
             //Act
-            $test_patron->setName($new_name);
-            $result = $test_patron->getName();
+            $test_customer->setName($new_name);
+            $result = $test_customer->getName();
             //Assert
             $this->assertEquals($new_name, $result);
         }
@@ -30,11 +30,11 @@
             //Arrange
             $name = "Bill";
             $id = 1;
-            $test_patron = new Customer($name, $id);
+            $test_customer = new Customer($name, $id);
             $new_id = 2;
             //Act
-            $test_patron->setId($new_id);
-            $result = $test_patron->getId();
+            $test_customer->setId($new_id);
+            $result = $test_customer->getId();
             //Assert
             $this->assertEquals($new_id, $result);
         }
@@ -43,11 +43,11 @@
             //Arrange
             $name = "Bill";
             $id = 1;
-            $test_patron = new Customer($name, $id);
+            $test_customer = new Customer($name, $id);
             $new_password = "hey there";
             //Act
-            $test_patron->setPassword($new_password);
-            $result = $test_patron->getPassword();
+            $test_customer->setPassword($new_password);
+            $result = $test_customer->getPassword();
             //Assert
             $this->assertEquals($new_password, $result);
         }
@@ -55,33 +55,33 @@
         {
             //Arrange
             $name = "Hemmingway";
-            $test_patron = new Customer($name);
+            $test_customer = new Customer($name);
             //Act
-            $test_patron->save();
+            $test_customer->save();
             $result = Customer::getAll();
             //Assert
-            $this->assertEquals($test_patron, $result[0]);
+            $this->assertEquals($test_customer, $result[0]);
         }
         function test_getAll()
         {
             //Arrange
             $name = "Bogus";
-            $test_patron = new Customer($name);
-            $test_patron->save();
+            $test_customer = new Customer($name);
+            $test_customer->save();
             $name2 = "Wendy";
-            $test_patron2 = new Customer($name2);
-            $test_patron2->save();
+            $test_customer2 = new Customer($name2);
+            $test_customer2->save();
             //Act
             $result = Customer::getAll();
             //Assert
-            $this->assertEquals([$test_patron, $test_patron2], $result);
+            $this->assertEquals([$test_customer, $test_customer2], $result);
         }
         function test_deleteAll()
         {
             //Arrange
             $name = "Freddy";
-            $test_patron = new Customer($name);
-            $test_patron->save();
+            $test_customer = new Customer($name);
+            $test_customer->save();
             //Act
             Customer::deleteAll();
             $result = Customer::getAll();
@@ -92,13 +92,13 @@
         {
             //Arrange
             $name = "asdfasdf";
-            $test_patron = new Customer($name);
-            $test_patron->save();
+            $test_customer = new Customer($name);
+            $test_customer->save();
             $new_name = "Poppy";
             //Act
-            $test_patron->updateName($new_name);
+            $test_customer->updateName($new_name);
             //Assert
-            $this->assertEquals($new_name, $test_patron->getName());
+            $this->assertEquals($new_name, $test_customer->getName());
         }
         function test_updatePassword()
         {
@@ -106,28 +106,44 @@
             $name = "Poppy";
             $id = null;
             $password = "hey";
-            $test_patron = new Customer($name, $id, $password);
-            $test_patron->save();
+            $test_customer = new Customer($name, $id, $password);
+            $test_customer->save();
             $new_password = "how";
             //Act
-            $test_patron->updatePassword($new_password);
+            $test_customer->updatePassword($new_password);
             //Assert
-            $this->assertEquals($new_password, $test_patron->getPassword());
+            $this->assertEquals($new_password, $test_customer->getPassword());
         }
         function test_delete()
         {
             //Arrange
             $name = "Zed";
-            $test_patron = new Customer($name);
-            $test_patron->save();
+            $test_customer = new Customer($name);
+            $test_customer->save();
             $name2 = "Fred";
-            $test_patron2 = new Customer($name2);
-            $test_patron2->save();
+            $test_customer2 = new Customer($name2);
+            $test_customer2->save();
             //Act
-            $test_patron2->delete();
+            $test_customer2->delete();
             $result = Customer::getAll();
             //Assert
-            $this->assertEquals([$test_patron], $result);
+            $this->assertEquals([$test_customer], $result);
+        }
+
+        function test_checkName()
+        {
+            //Arrange
+            $name = "Homie";
+            $test_customer = new Customer($name);
+            $test_customer->save();
+            $name2 = "Ann";
+            $test_customer2 = new Customer($name2);
+            $test_customer2->save();
+            //Act
+            $result = Customer::checkName($name);
+
+            //Assert
+            $this->assertEquals(true, $result);
         }
 
     }
