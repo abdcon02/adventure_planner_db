@@ -129,3 +129,26 @@ Swim - 4
 Sail - 5
 Sightsee - 5
 Eat - 5
+
+////////////////
+James Bond's Day Off -
+Description:
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Coordinates:
+
+Ski  -      46.9500,    7.4500
+Hike -      46.9333,    7.4000
+Shoot -     46.81667,   7.8500
+Scuba -     47.36667,   8.5500
+Casino -    47.36667,   8.5500
+
+
+Levels:
+
+Ski:     7
+Hike:    9
+Shoot:   4
+Swim:    8
+Culture: 8
