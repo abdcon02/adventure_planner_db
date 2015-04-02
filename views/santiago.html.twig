@@ -79,7 +79,15 @@ position:Santiago_de_Compostela,
 
     });
 
+var infowindow = new google.maps.InfoWindow({
+  content:"The Camino de Santiago is the name of any of the pilgrimage routes (most commonly the Camino Francés or French route) to the shrine of the apostle St. James the Great in the Cathedral of Santiago de Compostela in Galicia in northwestern Spain, where tradition has it that the remains of the saint are buried. Many take up this route as a form of spiritual path or retreat, for their spiritual growth. One of the trails starts here, at the Saint Jean Pied de Port."
+  });
 
+
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
 
 
 marker.setMap(map);

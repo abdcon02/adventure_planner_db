@@ -20,7 +20,7 @@ function initialize()
 
 
 var mapProp = {
-  center:Kartausstrasse,
+  center:Bellerivestrasse,
   zoom:7,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
@@ -60,8 +60,13 @@ var marker4=new google.maps.Marker({
     });
 
 
+var infowindow = new google.maps.InfoWindow({
+    content:"The French Alps are the portions of the Alps mountain range that stand within France, located in the Rhône-Alpes and Provence-Alpes-Côte d'Azur regions. Highest Elevation is at 4810 Meters"
+    });
 
-
+google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+    });
 
 
 marker.setMap(map);

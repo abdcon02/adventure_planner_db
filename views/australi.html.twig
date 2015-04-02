@@ -22,7 +22,7 @@ function initialize()
 
 
 var mapProp = {
-  center:Cottesloe,
+  center:Bannister,
   zoom:7,
   mapTypeId:google.maps.MapTypeId.ROADMAP
   };
@@ -74,7 +74,15 @@ marker2.setMap(map);
 marker3.setMap(map);
 marker4.setMap(map);
 
+var infowindow = new google.maps.InfoWindow({
+  content:"200 Mile Foot Race"
+  });
 
+
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
 
 
 
