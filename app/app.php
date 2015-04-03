@@ -19,6 +19,11 @@
     use Symfony\Component\HttpFoundation\Request;
     Request::enableHttpMethodparameterOverride();
 
+    session_start();
+    if (empty($_SESSION['princess_adventure_login'])) {
+        $_SESSION['princess_adventure_login'] = array();
+    }
+
 // Routes for Admin
 
     require_once __DIR__."/../app/admin.php";

@@ -46,8 +46,7 @@
 
 // This function needs to be run before the save method!!!
 // Only save if return == false!!!
-        static function checkName($name)
-        {
+        static function checkName($name){
             $query = $GLOBALS['DB']->query("SELECT name FROM customers;");
             $all_names = $query->fetchAll(PDO::FETCH_ASSOC);
             $exist = false;
@@ -58,7 +57,7 @@
                 }
             }
             return $exist;
-        }
+        } //if checkName == TRUE 'try again', if FALSE 'cool, man'
 
         function save()
         {
@@ -129,8 +128,7 @@
             $GLOBALS['DB']->exec("INSERT INTO preferences (customer_id, activity_pref, activity_id, activity_name) VALUES ({$this->getId()}, {$preference}, {$activity->getId()}, '{$activity->getName()}');");
         }
 
-        function login($input_password)
-        {
+        function login($input_password){
             $query = $GLOBALS['DB']->query("SELECT password FROM customers WHERE name = '{$this->getName()}';");
 
             $password = $query->fetch(PDO::FETCH_ASSOC);
@@ -138,10 +136,14 @@
 
             if($password['password'] == $input_password){
                 $match = true;
+                array_push($_SESSION['princess_adventure_login'], $match);
             }
-
             return $match;
         }
+        // login produces TRUE;
+
+
+
 
     }
  ?>
