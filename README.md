@@ -12,13 +12,13 @@ This app was created for the purpose of selling adventures to customers. A compa
 A user can access the app and view the created adventures. They can create and log into their accounts.
 
 ##Technologies Used
-PHP
-PHPUNIT
-SILEX
-TWIG
-POSTGRES
-PSQL
-GOOGLE MAPS API
+**PHP**<br />
+**PHPUNIT** <br />
+**SILEX** <br />
+**TWIG** <br />
+**POSTGRES** <br />
+**PSQL** <br />
+**GOOGLE MAPS API** 
 
 
 ##Use and Editing
