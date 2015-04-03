@@ -43,9 +43,11 @@ CREATE TABLE preferences(id serial PRIMARY KEY, customer_id int, activity_pref i
 ```
 
 You can also retrieve the database from the attached sql file using the \i command. First, go to the root folder of the project. Next open psql in that terminal window. Then create the database travel and connect to it. Next you will use the \i command to recreate the database. These are the commands.
+```sql
 CREATE DATABASE travel;
 \c travel;
 \i travel.sql;
+```
 
 To edit the app, download the source code and open it in your text editor. <br />
     *Note: If you are copying any of the code to your own directories, you may need to install Composer
