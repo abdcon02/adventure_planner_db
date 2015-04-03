@@ -4,15 +4,46 @@ James Nielsen, Jonathan Lin, Connor Abdelnoor
 ##Date
 April 2 2015
 
+
+
 ##Description
 This app was created for the purpose of selling adventures to customers. A company can create an adventure, and display it through the app. Details of the adventure include: activities, activity coordinates, activity level, and cost.
 <br />*At the moment activity coordinates need to be hard coded into the map scripts.*<br />
 A user can access the app and view the created adventures. They can create and log into their accounts.
 
-##Use and Editing
-To use the app, download the source code and run it in on your php server.
-You will need to create a psql database with the following tables and attributes:<br />
+##Technologies Used
+PHP
+PHPUNIT
+SILEX
+TWIG
+POSTGRES
+PSQL
+GOOGLE MAPS API
 
+
+##Use and Editing
+To use the app, download the source code and run it in on your php server. If you do not have php installed, installation instructions can be found on http://php.net/manual/en/install.general.php.
+PostGres installations can be found at
+https://www.learnhowtoprogram.com/lessons/postgres-with-php-weekend-homework
+You will need to create a psql database to use the app. The tables and instructions are listed below<br />
+CREATE DATABASE travel;
+\c travel
+CREATE TABLE activities (id serial PRIMARY KEY, name varchar, feedback_id int);
+CREATE TABLE activities_adventure(id serial PRIMARY KEY, activity_id int, adventure_id int, required boolean);
+CREATE TABLE activities_countries(id serial PRIMARY KEY, activity_id int, country_id int);
+CREATE TABLE adventures(id serial PRIMARY KEY, name varchar, description varchar, feedback_id int, cost int);
+CREATE TABLE adventures_countries(id serial PRIMARY KEY, adventure_id int, country_id int);
+CREATE TABLE countries(id serial PRIMARY KEY, name varchar);
+CREATE TABLE customers(id serial PRIMARY KEY, name varchar, password varchar);
+CREATE TABLE feedback(id serial PRIMARY KEY, text varchar, user_id int, activity_feedback boolean, adventure_feedback boolean);
+CREATE TABLE levels(id serial PRIMARY KEY, adventure_id int, activity_lvl int, activity_id int, activity_name varchar);
+CREATE TABLE locations(id serial PRIMARY KEY, latitude numeric, longitude numeric, cost int, activity_id int, adventure_id int);
+CREATE TABLE preferences(id serial PRIMARY KEY, customer_id int, activity_pref int, activity_id int, activity_name varchar);
+
+You can also retrieve the database from the attached sql file using the \i command. First, go to the root folder of the project. Next open psql in that terminal window. Then create the database travel and connect to it. Next you will use the \i command to recreate the database. These are the commands.
+CREATE DATABASE travel;
+\c travel;
+\i travel.sql;
 
 To edit the app, download the source code and open it in your text editor. <br />
     *Note: If you are copying any of the code to your own directories, you may need to install Composer
