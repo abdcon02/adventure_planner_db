@@ -2,22 +2,29 @@
     <head>
         <title></title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-        <!-- <link rel="stylesheet" type="text/css" href="../css/custom.css"> -->
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
         <style>
         .pref { margin: 10;  }
         </style>
     </head>
     <body>
-        <div class='container'>
-            <header>
-                <h2>Princess Adventures Banner</h2>
-            </header>
-            <div class="nav">
-
-
+        <div class="container">
+            <div class="header">
+                <h1>Princess Adventures</h1>
+            </div>
+            <div class="navbar">
+                <a href="/"><span>Home</span></a>
+                <span>Search</span>
+                <span class="blank_nav"></span>
+                <a><span>
+                <form action="logout" method="post">
+                    <input type="submit" name="name" value="Logout" class="logout">
+                </form>
+               </span></a>
+                <span><img src="/images/cart.png" alt="Cart" width="30" height="30"/></span>
             </div>
             <div class="row">
-                <h1>USER PROFILE: NAME BANNER</h1><br>
+                <h1>USER PROFILE: {{ name }}</h1><br>
             </div>
             <div class="row">
                 <div class="col-md-4">
@@ -41,7 +48,7 @@
                 </div>
             </div>
             <div class="row">
-                <h1>more stuff down here</h1>
+
             </div>
         </div>
     </body>

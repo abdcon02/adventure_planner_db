@@ -155,10 +155,40 @@
             $test_customer->save();
 
             //Act
-            $result = $test_customer->login($password);
+            $result = Customer::login($name, $password);
 
             //Assert
             $this->assertEquals(true, $result);
+        }
+
+        function test_findId()
+        {
+            //Arrange
+            $name = "Hollly";
+            $password = "admin";
+            $test_customer = new Customer($name, $password);
+            $test_customer->save();
+
+            //Act
+            $result = Customer::findId($name);
+
+            //Assert
+            $this->assertEquals($test_customer->getId(), $result);
+        }
+
+        function test_findName()
+        {
+            //Arrange
+            $name = "Hollly";
+            $password = "admin";
+            $test_customer = new Customer($name, $password);
+            $test_customer->save();
+
+            //Act
+            $result = Customer::findName($test_customer->getId());
+
+            //Assert
+            $this->assertEquals($name, $result);
         }
 
     }

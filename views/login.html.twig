@@ -20,16 +20,16 @@
         </div>
             <div class='row'><br>
                 <div class='col-sm-6' name='' id=''>
-                    <form action='/profile' id='signup' method='post' accept-charset='UTF-8'>
+                    <form action='/new_profile' id='signup' method='post' accept-charset='UTF-8'>
                         <fieldset >
                         <legend>NEW User Sign-up</legend>
-                        <input type='hidden' name='submitted' id='submitted' value='1'/>
+                        <input type='hidden' name='submitted' id='submitted' value='1' />
 
                         <label for='username' >UserName:</label>
-                        <input type='text' name='username' id='username'  maxlength="30" value="NewUser" />
+                        <input type='text' name='username' id='username'  maxlength="30" placeholder="NewUser" required/>
                         <br>
                         <label for='password' >Password:</label>
-                        <input type='password' name='password' id='password' maxlength="50" value="CREATE A PASSWORD"/>
+                        <input type='password' name='password' id='password' maxlength="50" required/>
 
                         <input type='submit' name='Submit' value='Sign Up' />
 
@@ -44,10 +44,10 @@
                         <input type='hidden' name='submitted' id='submitted' value='1'/>
 
                         <!-- <label for='username' >UserName:</label> -->
-                        <input type='text' name='username' id='username'  maxlength="30" value="USERNAME" />
+                        <input type='text' name='username' id='username'  maxlength="30" placeholder="USERNAME" required/>
                         <br>
                         <!-- <label for='password' >Password:</label> -->
-                        <input type='password' name='password' id='password' maxlength="50" value="PASSWORD"/>
+                        <input type='password' name='password' id='password' maxlength="50" required/>
 
                         <input type='submit' name='Submit' value='Log In' />
                         <!-- </fieldset> -->
@@ -59,7 +59,11 @@
 
 
 
+            <div class="error">
 
+                <h1 id="fail_login">{{ message }}</h1>
+
+            </div>
 
         </div>
     </body>

@@ -126,18 +126,17 @@
             $GLOBALS['DB']->exec("INSERT INTO preferences (customer_id, activity_pref, activity_id, activity_name) VALUES ({$this->getId()}, {$preference}, {$activity->getId()}, '{$activity->getName()}');");
         }
 
-        // function login($input_password){
-        //     $query = $GLOBALS['DB']->query("SELECT password FROM customers WHERE name = '{$this->getName()}';");
-        //
-        //     $password = $query->fetch(PDO::FETCH_ASSOC);
-        //     $match = false;
-        //
-        //     if($password['password'] == $input_password){
-        //         $match = true;
-        //         array_push($_SESSION['user_id'], $match);
-        //     }
-        //     return $match;//(TRUE = login)
-        // }
+        static function login($input_name, $input_password){
+            $query = $GLOBALS['DB']->query("SELECT password FROM customers WHERE name = '{$input_name}';");
+
+            $password = $query->fetch(PDO::FETCH_ASSOC);
+            $match = false;
+
+            if($password['password'] == $input_password){
+                $match = true;
+            }
+            return $match;//(TRUE = login)
+        }
 
         //THE 'TOM' WAY
         static function logInCheck($username, $password){
@@ -148,6 +147,22 @@
                 $match_customer = new Customer($result['name'], $result['password'], $result['id']);
             }
             return $match_customer;
+        }
+
+        static function findId($name)
+        {
+            $query = $GLOBALS['DB']->query("SELECT id FROM customers WHERE name = '{$name}';");
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $id = $result['id'];
+            return $id;
+        }
+
+        static function findName($id)
+        {
+            $query = $GLOBALS['DB']->query("SELECT name FROM customers WHERE id = {$id};");
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $name = $result['name'];
+            return $name;
         }
 
 

@@ -116,3 +116,10 @@ a {
     color: black;
     text-decoration: none;
 }
+
+.logout{
+    dispaly:inline;
+    float: none;
+    border: none;
+    background: none;
+}
