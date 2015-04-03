@@ -46,7 +46,7 @@
         $adventure = Adventure::find($id);
         $map = '/script/' . $id . '.html.twig';
 
-        if($_SESSION['id'] != 1){
+        if(isset($_SESSION['id'])){
             $route = "/profile";
             $text = "Profile";
             $name = "User: " . Customer::findName($_SESSION['id']);
