@@ -28,8 +28,9 @@
 .adventure_box {
     margin-left:100px;
     width: 300px;
+    height: 400px;
     padding: 10px;
-    display:inline-block;
+    float:left;
     text-align: center;
     border: 1px solid black;
 }
@@ -38,6 +39,9 @@
     width:200px;
     height: 200px;
     border-radius:240px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .adventure_activities {
@@ -57,12 +61,20 @@
     padding-top: 15px;
     border:1px solid black;
     display:inline-block;
-    /*padding: 20px 10px 20px 10px;*/
+    font-weight: bold;
 }
 
-.navbar .blank_nav {
+.navbar span:hover{
+    background: grey;
+}
+.navbar {
+    margin-top:20px;
+}
+
+.navbar .blank_nav, .navbar .blank_nav:hover {
     border: none;
     width: 20%;
+    background: none;
 }
 
 .cost {
@@ -73,4 +85,23 @@
 .adventure_name {
     font-weight: bold;
     font-size: 16pt;
+}
+
+h1 {
+    text-align:center;
+}
+
+.map {
+    display: inline-block;
+    margin-left:50px;
+    border: 1px solid black;
+}
+
+.footer {
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }

@@ -1,0 +1,88 @@
+<script>
+var Kartausstrasse =new google.maps.LatLng(47.355949, 8.564873);
+var Bellerivestrasse =new google.maps.LatLng (47.057405, 8.334160);
+var Findeln =new google.maps.LatLng (46.006888, 7.812309);
+var Ouartisé =new google.maps.LatLng (45.991624, 7.581596);
+var Route_de_Bagnes =new google.maps.LatLng(46.086953, 7.169609);
+
+
+
+function initialize()
+{
+
+
+
+var mapProp = {
+  center:Bellerivestrasse,
+  zoom:7,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var sightsee = '/sightsee.png'
+var hike = '/hike.png'
+var ski = '/eat.png'
+
+var marker=new google.maps.Marker({
+  position:Kartausstrasse,
+  icon: sightsee
+
+    });
+
+var marker1=new google.maps.Marker({
+  position:Bellerivestrasse,
+  icon: sightsee
+
+    });
+
+var marker2=new google.maps.Marker({
+   position:Findeln,
+   icon: hike
+
+    });
+
+var marker3=new google.maps.Marker({
+    position:Ouartisé,
+    icon:sightsee
+
+    });
+var marker4=new google.maps.Marker({
+    position:Route_de_Bagnes,
+    icon:hike
+
+    });
+
+
+var infowindow = new google.maps.InfoWindow({
+    content:"The French Alps are the portions of the Alps mountain range that stand within France, located in the Rhône-Alpes and Provence-Alpes-Côte d'Azur regions. Highest Elevation is at 4810 Meters"
+    });
+
+google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+    });
+
+
+marker.setMap(map);
+marker1.setMap(map);
+marker2.setMap(map);
+marker3.setMap(map);
+marker4.setMap(map);
+
+
+
+
+
+
+var myTrip=[Kartausstrasse, Bellerivestrasse, Findeln, Ouartisé, Route_de_Bagnes];
+var flightPath=new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#DC143C",
+  strokeOpacity:0.8,
+  strokeWeight:2
+  });
+
+flightPath.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>

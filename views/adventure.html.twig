@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Princess Adventures</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all">
+
+        <script
+        src="http://maps.googleapis.com/maps/api/js">
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img id="banner" src="../images/banner.jpg" alt="banner"/>
+                <div class="navbar">
+                    <a href="/"><span>Home</span></a>
+                    <span>Search</span>
+                    <span class="blank_nav"></span>
+                    <span>Login</span>
+                    <span>Cart</span>
+                </div>
+            </div>
+            <div class="main">
+                <h1>{{ adventure.getName() }}</h1>
+                <img class="adventure_image" src="../images/{{ adventure.getId }}.jpg" alt="adventure image" />
+                <h3>Description:</h3>
+                <p>
+                    {{ adventure.getDescription}}
+                </p>
+
+                <h3>Activities:</h3>
+                {% for event in adventure.getActivities %}
+                    <img class="adventure_activities_icons" src="../images/{{ event.getName }}.png" alt="Icon" />
+                    <p> Level: {{ adventure.getActivityLevel(event) }}</p>
+                {% endfor %}
+                <div class="map">
+                    {% include(map) %}
+                    <div id="googleMap" style="width:800px;height:380px;"></div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+
+            </div>
+        </div>
+    </body>
+</html>
