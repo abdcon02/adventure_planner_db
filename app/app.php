@@ -19,6 +19,11 @@
     use Symfony\Component\HttpFoundation\Request;
     Request::enableHttpMethodparameterOverride();
 
+    session_start();
+    if (empty($_SESSION['princess_adventure_login'])) {
+        $_SESSION['princess_adventure_login'] = array();
+    }
+
 // Routes for Admin
 
     require_once __DIR__."/../app/admin.php";
@@ -34,17 +39,68 @@
         return $app['twig']->render('profile.html.twig');
     });
 
-    $app->get("/santiago", function() use($app) {
-        return $app['twig']->Render('santiago.html.twig');
+
+/////////// SIGNUP
+    $app->get("/signup", function() use($app){
+        return $app['twig']->render('signup.html.twig'/, array('error' => ""));
     });
 
-    $app->get("/signup", function() use($app){
-        //checkName()
-        return $app['twig']->render('signup.html.twig');
+    $app->post("/signup", function() use ($app) {
+        $error = "";
+        $username = $_POST['username'];
+        if (str_word_count($username) == 1){
+            if (Customer::checkAvailable($username)){
+                $password= $_POST['password'];
+                $new_user = new Customer($app->escape($username), $app->escape($password));
+                $new_user->save();
+                //store user id into the session
+                $_SESSION['user_id'] = $new_user->getId();
+            }
+            else{
+                $error = "This username is taken.";
+            }
+        }
+        else
+        {
+            $error = "Usernames must be ONE word.";
+        }
+        if($error) {
+            return $app['twig']->render('signup.twig', array('error' => $error));
+        }
+        else {
+            return $app->redirect('/messages');
+        }
     });
+
+///////////LOGOUT
+    $app->post("/", function() use ($app) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        //check if login is valid, if so return a user, if not null
+        $user = Customer::logInCheck($app->escape($username), $app->escape($password));
+        if($user) {
+            //if we have a user store it into the session by id
+            $_SESSION['user_id'] = $user->getId();
+            return $app->redirect('/messages');
+        } else {
+            $error = "true";
+            $subRequest = Request::create('/', 'GET', array('error' => $error));
+            return $app->handle($subRequest, HttpKernelInterface::SUB_REQUEST, true);
+        }
+    });
+////////LOGOUT
+    $app->get("/logout", function() use ($app) {
+        session_unset();
+        return $app->redirect('/');
+    });
+
+
+
+
+
 
     $app->get("/login", function() use($app){
-        //validate()
+        //if login returns true, create cookie and procede to home
         return $app['twig']->render('login.html.twig');
     });
 
